@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show do Milhão</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .question { font-size: 24px; margin-bottom: 20px; }
+        .options { list-style-type: none; padding: 0; }
+        .options li { margin: 10px 0; }
+        button { padding: 10px 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Show do Milhão</h1>
+    <div id="status">Clique no botão para iniciar o jogo</div>
+    <button id="start-button" onclick="startGame()">Iniciar Jogo</button>
+    <div class="question" id="question" style="display:none;"></div>
+    <ul class="options" id="options" style="display:none;"></ul>
+    <button id="next-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
+
+    <script>
+        function startGame() {
+            fetch('/api/iniciar')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').textContent = data.status;
+                    document.getElementById('start-button').style.display = 'none';
+                    getQuestion();
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+
+        function getQuestion() {
+            fetch('/api/pergunta')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'Fim de jogo') {
+                        document.getElementById('status').textContent = 'Fim de jogo! Pontuação: ' + data.pontuacao;
+                        document.getElementById('question').style.display = 'none';
+                        document.getElementById('options').style.display = 'none';
+                        document.getElementById('next-button').style.display = 'none';
+                    } else {
+                        document.getElementById('question').textContent = data.pergunta;
+                        document.getElementById('question').style.display = 'block';
+                        const optionsList = document.getElementById('options');
+                        optionsList.innerHTML = '';
+                        data.alternativas.forEach((option, index) => {
+                            const li = document.createElement('li');
+                            li.textContent = option;
+                            li.onclick = () => sendAnswer(data.numero, option.charAt(0));
+                            optionsList.appendChild(li);
+                        });
+                        optionsList.style.display = 'block';
+                        document.getElementById('next-button').style.display = 'none';
+                    }
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+
+        function sendAnswer(numero, resposta) {
+            fetch('/api/resposta', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ numero: numero, resposta: resposta })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').textContent = data.status;
+                    if (data.status === 'Correto') {
+                        document.getElementById('next-button').style.display = 'block';
+                    } else {
+                        document.getElementById('status').textContent += ' A resposta correta é ' + data.resposta_correta;
+                        alert("FIM DE JOGO! Resposta errada! A resposta correta é:"+data.resposta_correta);
+                        location.reload();
+                    }
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+    </script>
+</body>
+</html>
