@@ -14,7 +14,17 @@ carregar_perguntas :-
     assertz(pergunta(2, 'Qual é o maior planeta do Sistema Solar?', ['a) Terra', 'b) Marte', 'c) Júpiter', 'd) Saturno'], 'c')),
     assertz(pergunta(3, 'Quem pintou a Mona Lisa?', ['a) Vincent van Gogh', 'b) Leonardo da Vinci', 'c) Pablo Picasso', 'd) Michelangelo'], 'b')),
     assertz(pergunta(4, 'Em que ano o homem pisou na Lua pela primeira vez?', ['a) 1965', 'b) 1967', 'c) 1969', 'd) 1971'], 'c')),
-    assertz(pergunta(5, 'Qual é o maior oceano do mundo?', ['a) Oceano Atlântico', 'b) Oceano Índico', 'c) Oceano Pacífico', 'd) Oceano Ártico'], 'c')).
+    assertz(pergunta(5, 'Qual é o maior oceano do mundo?', ['a) Oceano Atlântico', 'b) Oceano Índico', 'c) Oceano Pacífico', 'd) Oceano Ártico'], 'c')),
+    assertz(pergunta(6, 'Qual é o maior mamífero terrestre?', ['a) Elefante', 'b) Girafa', 'c) Hipopotamo', 'd) Rinoceronte'], 'a')),
+    assertz(pergunta(7, 'Qual é a capital da França?', ['a) Paris', 'b) Lyon', 'c) Marseille', 'd) Toulouse'], 'a')),
+    assertz(pergunta(8, 'Quem escreveu "Dom Casmurro"?', ['a) Machado de Assis', 'b) José de Alencar', 'c) Jorge Amado', 'd) Lima Barreto'], 'a')),
+    assertz(pergunta(9, 'Qual é o elemento químico representado pelo símbolo Au?', ['a) Ouro', 'b) Prata', 'c) Alumínio', 'd) Cobre'], 'a')),
+    assertz(pergunta(10, 'Qual planeta é conhecido como o "planeta vermelho"?', ['a) Marte', 'b) Vênus', 'c) Júpiter', 'd) Saturno'], 'a')),
+    assertz(pergunta(11, 'Qual é o idioma oficial do Brasil?', ['a) Espanhol', 'b) Português', 'c) Inglês', 'd) Francês'], 'b')),
+    assertz(pergunta(12, 'Em que ano foi fundada a cidade de São Paulo?', ['a) 1554', 'b) 1600', 'c) 1700', 'd) 1800'], 'a')),
+    assertz(pergunta(13, 'Quem foi o primeiro presidente do Brasil?', ['a) Marechal Deodoro da Fonseca', 'b) Getúlio Vargas', 'c) Juscelino Kubitschek', 'd) Pedro II'], 'a')),
+    assertz(pergunta(14, 'Qual é o menor estado brasileiro em termos de área?', ['a) São Paulo', 'b) Rio de Janeiro', 'c) Sergipe', 'd) Alagoas'], 'c')),
+    assertz(pergunta(15, 'Qual é o maior rio do mundo em volume de água?', ['a) Nilo', 'b) Amazonas', 'c) Yangtze', 'd) Mississippi'], 'b')).
 
 % Servidor Web
 server(Port) :-
