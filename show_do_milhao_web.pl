@@ -24,6 +24,7 @@ server(Port) :-
 :- http_handler(root(api/iniciar), iniciar_jogo, []).
 :- http_handler(root(api/pergunta), enviar_pergunta, []).
 :- http_handler(root(api/resposta), verificar_resposta, []).
+:- http_handler(root(api/ajuda), fornecer_ajuda, []).
 
 % Iniciar o jogo
 iniciar_jogo(_Request) :-
@@ -80,3 +81,8 @@ server_loop :-
 % Iniciar servidor na porta 8080
 :- initialization(server(8080)),
    initialization(server_loop).
+
+
+:- http_handler(root(api/ajuda), fornecer_ajuda, []).
+fornecer_ajuda(_Request) :-
+    reply_json(_{mensagem: 'Este é o Show do Milhão! Responda as perguntas corretamente e ganhe pontos. Clique na alternativa correta para responder.'}).

@@ -9,6 +9,7 @@
         .options { list-style-type: none; padding: 0; }
         .options li { margin: 10px 0; }
         button { padding: 10px 20px; font-size: 18px; }
+        #help-button { position: absolute; bottom: 20px; right: 20px; padding: 5px 10px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -18,6 +19,7 @@
     <div class="question" id="question" style="display:none;"></div>
     <ul class="options" id="options" style="display:none;"></ul>
     <button id="next-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
+    <button id="help-button" onclick="getHelp()">Ajuda</button>
 
     <script>
         function startGame() {
@@ -76,6 +78,15 @@
                         alert("FIM DE JOGO! Resposta errada! A resposta correta é:"+data.resposta_correta);
                         location.reload();
                     }
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+
+        function getHelp() {
+            fetch('/api/ajuda')
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.mensagem);
                 })
                 .catch(error => console.error('Erro:', error));
         }
