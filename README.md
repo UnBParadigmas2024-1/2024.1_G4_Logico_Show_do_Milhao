@@ -8,7 +8,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 18/0136925  |  Hugo Rocha de Moura |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0142260  |  Mateus de Almeida Dias |
 
 ## Sobre 
 O jogo "Show do Milhão" criado é uma versão digital inspirada no famoso programa televisivo brasileiro "Show do Milhão" exibido pelo SBT. Ele combina elementos de perguntas e respostas com a dinâmica de acumulação de pontos ao responder corretamente.
