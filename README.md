@@ -6,13 +6,13 @@
 
 ## Alunos
 
-| Matrícula  | Aluno                        |
-| ---------- | ---------------------------- |
-| 20/0057421 | Delziron Braz de Lima        |
-| 20/0030264 | Guilherme Nishimura da Silva |
-| 18/0136925 | Hugo Rocha de Moura          |
-| 19/0142260 | Mateus de Almeida Dias       |
-| 20/0025791 | Pablo Guilherme de Jesus Batista Silva|
+| Matrícula  | Aluno                                  |
+| ---------- | -------------------------------------- |
+| 20/0057421 | Delziron Braz de Lima                  |
+| 20/0030264 | Guilherme Nishimura da Silva           |
+| 18/0136925 | Hugo Rocha de Moura                    |
+| 19/0142260 | Mateus de Almeida Dias                 |
+| 20/0025791 | Pablo Guilherme de Jesus Batista Silva |
 
 ## Sobre 
 
@@ -61,7 +61,8 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | Hugo Rocha          | Criação de parte do código prolog e implementação do  docker | Excelente                                                                      |
 | Guilherme Nishimura | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
-| Pablo Guilherme | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
+| Pablo Guilherme     | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
+| Delziron Braz       | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
 
 ## Outros
 
