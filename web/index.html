@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show do Milhão</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .question { font-size: 24px; margin-bottom: 20px; }
-        .options { list-style-type: none; padding: 0; }
-        .options li { margin: 10px 0; }
-        button { padding: 10px 20px; font-size: 18px; }
-        #help-button { position: absolute; bottom: 20px; right: 20px; padding: 5px 10px; font-size: 14px; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        #help-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
     </style>
 </head>
+
 <body>
     <h1>Show do Milhão</h1>
     <div id="status">Clique no botão para iniciar o jogo</div>
@@ -85,7 +113,7 @@
                         document.getElementById('next-button').style.display = 'block';
                     } else {
                         document.getElementById('status').textContent += ' A resposta correta é ' + data.resposta_correta;
-                        alert("FIM DE JOGO,você vai voltar para casa de bolsos vazios! Resposta errada! A resposta correta é: " + data.resposta_correta);
+                        alert("FIM DE JOGO, você vai voltar para casa de bolsos vazios! Resposta errada! A resposta correta é: " + data.resposta_correta);
                         location.reload();
                     }
                 })
@@ -109,3 +137,8 @@
                     location.reload();
                 })
                 .catch(error => console.error('Erro:', error));
+        }
+    </script>
+</body>
+
+</html>
