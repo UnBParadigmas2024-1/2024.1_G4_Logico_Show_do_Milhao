@@ -5,11 +5,12 @@
 **Paradigma**: Paradigma Lógico - PROLOG<br>
 
 ## Alunos
-|Matrícula | Aluno |
-| -- | -- |
-| 20/0030264  | Guilherme Nishimura da Silva |
-| 18/0136925  |  Hugo Rocha de Moura |
-| 19/0142260  |  Mateus de Almeida Dias |
+| Matrícula  | Aluno                        |
+| ---------- | ---------------------------- |
+| 20/0030264 | Guilherme Nishimura da Silva |
+| 18/0136925 | Hugo Rocha de Moura          |
+| 19/0142260 | Mateus de Almeida Dias       |
+| 20/0057421 | Delziron Braz de Lima        |
 
 ## Sobre 
 O jogo "Show do Milhão" criado é uma versão digital inspirada no famoso programa televisivo brasileiro "Show do Milhão" exibido pelo SBT. Ele combina elementos de perguntas e respostas com a dinâmica de acumulação de pontos ao responder corretamente.
@@ -44,10 +45,10 @@ TEMPO: +/- 15min
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
-|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
-| -- | -- | -- |
-| Hugo Rocha  |  Criação de parte do código prolog e implementação do  docker | Excelente |
-| Guilherme Nishimura |  Contribuição com funcionalidades no prolog e no front | Excelente |
+| Nome do Membro      | Contribuição                                                 | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| Hugo Rocha          | Criação de parte do código prolog e implementação do  docker | Excelente                                                                      |
+| Guilherme Nishimura | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
