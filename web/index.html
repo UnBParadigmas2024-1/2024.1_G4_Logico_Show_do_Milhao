@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +21,12 @@
     <ul class="options" id="options" style="display:none;"></ul>
     <button id="next-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
     <button id="help-button" onclick="getHelp()">Ajuda</button>
+    <button id="desistir-button" onclick="desistir()" style="display:none;">Desistir</button>
+    <div id="valor-acumulado" style="display:none;">Valor Acumulado: R$ 0,00</div>
 
     <script>
+        let valorAcumulado = 0;
+
         function startGame() {
             fetch('/api/iniciar')
                 .then(response => response.json())
@@ -29,6 +34,8 @@
                     document.getElementById('status').textContent = data.status;
                     document.getElementById('start-button').style.display = 'none';
                     getQuestion();
+                    document.getElementById('desistir-button').style.display = 'block';
+                    document.getElementById('valor-acumulado').style.display = 'block';
                 })
                 .catch(error => console.error('Erro:', error));
         }
@@ -38,10 +45,11 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'Fim de jogo') {
-                        document.getElementById('status').textContent = 'Fim de jogo! Pontuação: ' + data.pontuacao;
+                        document.getElementById('status').textContent = 'Fim de jogo! Pontuação: ' + data.pontuacao + ' | Valor Acumulado: R$ ' + data.valor_acumulado;
                         document.getElementById('question').style.display = 'none';
                         document.getElementById('options').style.display = 'none';
                         document.getElementById('next-button').style.display = 'none';
+                        document.getElementById('desistir-button').style.display = 'none';
                     } else {
                         document.getElementById('question').textContent = data.pergunta;
                         document.getElementById('question').style.display = 'block';
@@ -72,10 +80,12 @@
                 .then(data => {
                     document.getElementById('status').textContent = data.status;
                     if (data.status === 'Correto') {
+                        valorAcumulado += 65000;
+                        document.getElementById('valor-acumulado').textContent = 'Valor Acumulado: R$ ' + valorAcumulado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                         document.getElementById('next-button').style.display = 'block';
                     } else {
                         document.getElementById('status').textContent += ' A resposta correta é ' + data.resposta_correta;
-                        alert("FIM DE JOGO! Resposta errada! A resposta correta é:"+data.resposta_correta);
+                        alert("FIM DE JOGO,você vai voltar para casa de bolsos vazios! Resposta errada! A resposta correta é: " + data.resposta_correta);
                         location.reload();
                     }
                 })
@@ -90,6 +100,12 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-    </script>
-</body>
-</html>
+
+        function desistir() {
+            fetch('/api/desistir')
+                .then(response => response.json())
+                .then(data => {
+                    alert("Você desistiu do jogo! Valor recebido: R$ " + data.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+                    location.reload();
+                })
+                .catch(error => console.error('Erro:', error));
