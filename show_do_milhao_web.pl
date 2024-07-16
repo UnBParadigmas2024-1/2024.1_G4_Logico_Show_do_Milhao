@@ -59,7 +59,8 @@ verificar_resposta(Request) :-
             nth1(Numero, PerguntasEmbaralhadas, pergunta(_, _, _, RespostaCorreta, _)),
             (AtomResposta = RespostaCorreta ->
                 incrementar_pontuacao,
-                reply_json(_{status: 'Correto'});
+                valor_acumulado(ValorAcumulado),
+                reply_json(_{status: 'Correto', valor_acumulado: ValorAcumulado});
                 reply_json(_{status: 'Errado', resposta_correta: RespostaCorreta}))
         ),
         Error,
@@ -67,6 +68,7 @@ verificar_resposta(Request) :-
             reply_json(_{error: 'Erro interno do servidor'}, [status(500)])
         )
     ).
+
 
 % Incrementar pontuação e valor acumulado
 incrementar_pontuacao :-
@@ -119,3 +121,4 @@ server_loop :-
 :- http_handler(root(api/ajuda), fornecer_ajuda, []).
 fornecer_ajuda(_Request) :-
     reply_json(_{mensagem: 'Este é o Show do Milhão! Responda as perguntas corretamente e ganhe pontos. Clique na alternativa correta para responder.'}).
+
