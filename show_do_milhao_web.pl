@@ -7,25 +7,25 @@
 :- dynamic jogador/1.
 :- dynamic pontuacao/1.
 :- dynamic valor_acumulado/1.
-:- dynamic pergunta/4.
+:- dynamic pergunta/5.
 
 % Carregar perguntas e respostas
 carregar_perguntas :-
-    assertz(pergunta(1, 'Qual é a capital do Brasil?', ['a) Rio de Janeiro', 'b) Brasília', 'c) São Paulo', 'd) Salvador'], 'b')),
-    assertz(pergunta(2, 'Qual é o maior planeta do Sistema Solar?', ['a) Terra', 'b) Marte', 'c) Júpiter', 'd) Saturno'], 'c')),
-    assertz(pergunta(3, 'Quem pintou a Mona Lisa?', ['a) Vincent van Gogh', 'b) Leonardo da Vinci', 'c) Pablo Picasso', 'd) Michelangelo'], 'b')),
-    assertz(pergunta(4, 'Em que ano o homem pisou na Lua pela primeira vez?', ['a) 1965', 'b) 1967', 'c) 1969', 'd) 1971'], 'c')),
-    assertz(pergunta(5, 'Qual é o maior oceano do mundo?', ['a) Oceano Atlântico', 'b) Oceano Índico', 'c) Oceano Pacífico', 'd) Oceano Ártico'], 'c')),
-    assertz(pergunta(6, 'Qual é o maior mamífero terrestre?', ['a) Elefante', 'b) Girafa', 'c) Hipopotamo', 'd) Rinoceronte'], 'a')),
-    assertz(pergunta(7, 'Qual é a capital da França?', ['a) Paris', 'b) Lyon', 'c) Marseille', 'd) Toulouse'], 'a')),
-    assertz(pergunta(8, 'Quem escreveu "Dom Casmurro"?', ['a) Machado de Assis', 'b) José de Alencar', 'c) Jorge Amado', 'd) Lima Barreto'], 'a')),
-    assertz(pergunta(9, 'Qual é o elemento químico representado pelo símbolo Au?', ['a) Ouro', 'b) Prata', 'c) Alumínio', 'd) Cobre'], 'a')),
-    assertz(pergunta(10, 'Qual planeta é conhecido como o "planeta vermelho"?', ['a) Marte', 'b) Vênus', 'c) Júpiter', 'd) Saturno'], 'a')),
-    assertz(pergunta(11, 'Qual é o idioma oficial do Brasil?', ['a) Espanhol', 'b) Português', 'c) Inglês', 'd) Francês'], 'b')),
-    assertz(pergunta(12, 'Em que ano foi fundada a cidade de São Paulo?', ['a) 1554', 'b) 1600', 'c) 1700', 'd) 1800'], 'a')),
-    assertz(pergunta(13, 'Quem foi o primeiro presidente do Brasil?', ['a) Marechal Deodoro da Fonseca', 'b) Getúlio Vargas', 'c) Juscelino Kubitschek', 'd) Pedro II'], 'a')),
-    assertz(pergunta(14, 'Qual é o menor estado brasileiro em termos de área?', ['a) São Paulo', 'b) Rio de Janeiro', 'c) Sergipe', 'd) Alagoas'], 'c')),
-    assertz(pergunta(15, 'Qual é o maior rio do mundo em volume de água?', ['a) Nilo', 'b) Amazonas', 'c) Yangtze', 'd) Mississippi'], 'b')).
+    assertz(pergunta(1, 'Qual é a capital do Brasil?', ['a) Rio de Janeiro', 'b) Brasília', 'c) São Paulo', 'd) Salvador'], 'b', 'A capital foi fundada em 1960.')),
+    assertz(pergunta(2, 'Qual é o maior planeta do Sistema Solar?', ['a) Terra', 'b) Marte', 'c) Júpiter', 'd) Saturno'], 'c', 'Esse planeta é conhecido como um gigante gasoso.')),
+    assertz(pergunta(3, 'Quem pintou a Mona Lisa?', ['a) Vincent van Gogh', 'b) Leonardo da Vinci', 'c) Pablo Picasso', 'd) Michelangelo'], 'b', 'O pintor é italiano e viveu durante o Renascimento.')),
+    assertz(pergunta(4, 'Em que ano o homem pisou na Lua pela primeira vez?', ['a) 1965', 'b) 1967', 'c) 1969', 'd) 1971'], 'c', 'O evento ocorreu durante a missão Apollo 11.')),
+    assertz(pergunta(5, 'Qual é o maior oceano do mundo?', ['a) Oceano Atlântico', 'b) Oceano Índico', 'c) Oceano Pacífico', 'd) Oceano Ártico'], 'c', 'Este oceano cobre mais de 63 milhões de milhas quadradas.')),
+    assertz(pergunta(6, 'Qual é o maior mamífero terrestre?', ['a) Elefante', 'b) Girafa', 'c) Hipopotamo', 'd) Rinoceronte'], 'a', 'Este animal é conhecido por sua tromba longa.')),
+    assertz(pergunta(7, 'Qual é a capital da França?', ['a) Paris', 'b) Lyon', 'c) Marseille', 'd) Toulouse'], 'a', 'A cidade é conhecida como "A Cidade da Luz".')),
+    assertz(pergunta(8, 'Quem escreveu "Dom Casmurro"?', ['a) Machado de Assis', 'b) José de Alencar', 'c) Jorge Amado', 'd) Lima Barreto'], 'a', 'O autor é um dos fundadores da Academia Brasileira de Letras.')),
+    assertz(pergunta(9, 'Qual é o elemento químico representado pelo símbolo Au?', ['a) Ouro', 'b) Prata', 'c) Alumínio', 'd) Cobre'], 'a', 'Este metal precioso é amarelo e altamente valorizado.')),
+    assertz(pergunta(10, 'Qual planeta é conhecido como o "planeta vermelho"?', ['a) Marte', 'b) Vênus', 'c) Júpiter', 'd) Saturno'], 'a', 'Este planeta tem uma coloração avermelhada devido ao óxido de ferro em sua superfície.')),
+    assertz(pergunta(11, 'Qual é o idioma oficial do Brasil?', ['a) Espanhol', 'b) Português', 'c) Inglês', 'd) Francês'], 'b', 'O idioma é de origem latina e é falado por mais de 200 milhões de pessoas no país.')),
+    assertz(pergunta(12, 'Em que ano foi fundada a cidade de São Paulo?', ['a) 1554', 'b) 1600', 'c) 1700', 'd) 1800'], 'a', 'A cidade foi fundada por padres jesuítas.')),
+    assertz(pergunta(13, 'Quem foi o primeiro presidente do Brasil?', ['a) Marechal Deodoro da Fonseca', 'b) Getúlio Vargas', 'c) Juscelino Kubitschek', 'd) Pedro II'], 'a', 'O presidente era um marechal do Exército Brasileiro.')),
+    assertz(pergunta(14, 'Qual é o menor estado brasileiro em termos de área?', ['a) São Paulo', 'b) Rio de Janeiro', 'c) Sergipe', 'd) Alagoas'], 'c', 'Este estado está localizado na região Nordeste do Brasil.')),
+    assertz(pergunta(15, 'Qual é o maior rio do mundo em volume de água?', ['a) Nilo', 'b) Amazonas', 'c) Yangtze', 'd) Mississippi'], 'b', 'Este rio passa por vários países da América do Sul.')).
 
 % Servidor Web
 server(Port) :-
@@ -36,6 +36,7 @@ server(Port) :-
 :- http_handler(root(api/pergunta), enviar_pergunta, []).
 :- http_handler(root(api/resposta), verificar_resposta, []).
 :- http_handler(root(api/ajuda), fornecer_ajuda, []).
+:- http_handler(root(api/dica), fornecer_dica, []).
 :- http_handler(root(api/desistir), desistir, []).
 
 % Iniciar o jogo
@@ -52,10 +53,10 @@ iniciar_jogo(_Request) :-
 enviar_pergunta(_Request) :-
     pontuacao(P),
     ProximaPergunta is P + 1,
-    (pergunta(ProximaPergunta, Pergunta, Alternativas, _) ->
+    (pergunta(ProximaPergunta, Pergunta, Alternativas, _, Dica) ->
         (ProximaPergunta mod 5 =:= 0 ->
-            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, especial: true});
-            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas}));
+            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, dica: Dica, especial: true});
+            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, dica: Dica}));
         finalizar_jogo).
 
 % Verificar resposta
@@ -65,7 +66,7 @@ verificar_resposta(Request) :-
             atom_string(AtomNumero, Dados.numero), % Converte para átomo
             atom_string(AtomResposta, Dados.resposta), % Converte para átomo
             atom_number(AtomNumero, Numero), % Converte átomo para número
-            pergunta(Numero, _, _, RespostaCorreta),
+            pergunta(Numero, _, _, RespostaCorreta, _),
             (AtomResposta = RespostaCorreta ->
                 incrementar_pontuacao,
                 reply_json(_{status: 'Correto'});
@@ -98,6 +99,21 @@ finalizar_jogo :-
 desistir(_Request) :-
     valor_acumulado(V),
     reply_json(_{status: 'Desistiu', valor: V}).
+
+% Fornecer dica
+fornecer_dica(Request) :-
+    catch(
+        (   http_read_json_dict(Request, Dados),
+            atom_string(AtomNumero, Dados.numero), % Converte para átomo
+            atom_number(AtomNumero, Numero), % Converte átomo para número
+            pergunta(Numero, _, _, _, Dica),
+            reply_json(_{dica: Dica})
+        ),
+        Error,
+        (   format(user_error, 'Erro ao processar requisição para /api/dica: ~w~n', [Error]),
+            reply_json(_{error: 'Erro interno do servidor'}, [status(500)])
+        )
+    ).
 
 % Manter servidor ativo
 server_loop :-

@@ -49,10 +49,13 @@
     <ul class="options" id="options" style="display:none;"></ul>
     <button id="next-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
     <button id="help-button" onclick="getHelp()">Ajuda</button>
+    <button id="hint-button" onclick="getHint()" style="display:none;">Dica</button>
     <button id="desistir-button" onclick="desistir()" style="display:none;">Desistir</button>
     <div id="valor-acumulado" style="display:none;">Valor Acumulado: R$ 0,00</div>
+
     <script>
         let valorAcumulado = 0;
+        let currentQuestionNumber = 0;
 
         function startGame() {
             fetch('/api/iniciar')
@@ -84,6 +87,7 @@
                                 return;
                             }
                         }
+                        currentQuestionNumber = data.numero;
                         document.getElementById('question').textContent = data.pergunta;
                         document.getElementById('question').style.display = 'block';
                         const optionsList = document.getElementById('options');
@@ -96,6 +100,7 @@
                         });
                         optionsList.style.display = 'block';
                         document.getElementById('next-button').style.display = 'none';
+                        document.getElementById('hint-button').style.display = 'block';
                     }
                 })
                 .catch(error => console.error('Erro:', error));
@@ -116,11 +121,27 @@
                         valorAcumulado += 65000;
                         document.getElementById('valor-acumulado').textContent = 'Valor Acumulado: R$ ' + valorAcumulado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                         document.getElementById('next-button').style.display = 'block';
+                        document.getElementById('hint-button').style.display = 'none';
                     } else {
                         document.getElementById('status').textContent += ' A resposta correta é ' + data.resposta_correta;
                         alert("FIM DE JOGO,você vai voltar para casa de bolsos vazios! Resposta errada! A resposta correta é: " + data.resposta_correta);
                         location.reload();
                     }
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+
+        function getHint() {
+            fetch('/api/dica', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ numero: currentQuestionNumber })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.dica);
                 })
                 .catch(error => console.error('Erro:', error));
         }
@@ -144,8 +165,6 @@
                 .catch(error => console.error('Erro:', error));
         }
     </script>
-
-
 </body>
 
 </html>
