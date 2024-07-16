@@ -23,20 +23,23 @@
 
         .options li {
             margin: 10px 0;
-            cursor: pointer;
         }
 
         button {
             padding: 10px 20px;
             font-size: 18px;
+            margin: 5px;
         }
 
-        #help-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            padding: 5px 10px;
-            font-size: 14px;
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #valor-acumulado {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -47,11 +50,15 @@
     <button id="start-button" onclick="startGame()">Iniciar Jogo</button>
     <div class="question" id="question" style="display:none;"></div>
     <ul class="options" id="options" style="display:none;"></ul>
-    <button id="next-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
-    <button id="help-button" onclick="getHelp()">Ajuda</button>
-    <button id="hint-button" onclick="getHint()" style="display:none;">Dica</button>
-    <button id="desistir-button" onclick="desistir()" style="display:none;">Desistir</button>
     <div id="valor-acumulado" style="display:none;">Valor Acumulado: R$ 0,00</div>
+   
+
+    <div class="button-container" style="display:none;" id="button-container">
+        <button id="hint-button" onclick="getHint()">Dica</button>
+        <button id="next-button" onclick="getQuestion()">Próxima Pergunta</button>
+        <button id="desistir-button" onclick="desistir()">Desistir</button>
+        <button id="help-button" onclick="getHelp()" style="display:none;">Ajuda</button>
+    </div>
 
     <script>
         let valorAcumulado = 0;
@@ -64,8 +71,9 @@
                     document.getElementById('status').textContent = data.status;
                     document.getElementById('start-button').style.display = 'none';
                     getQuestion();
-                    document.getElementById('desistir-button').style.display = 'block';
+                    document.getElementById('button-container').style.display = 'flex';
                     document.getElementById('valor-acumulado').style.display = 'block';
+                    document.getElementById('help-button').style.display = 'block';
                 })
                 .catch(error => console.error('Erro:', error));
         }
@@ -78,8 +86,7 @@
                         document.getElementById('status').textContent = 'Fim de jogo! Pontuação: ' + data.pontuacao + ' | Valor Acumulado: R$ ' + data.valor_acumulado;
                         document.getElementById('question').style.display = 'none';
                         document.getElementById('options').style.display = 'none';
-                        document.getElementById('next-button').style.display = 'none';
-                        document.getElementById('desistir-button').style.display = 'none';
+                        document.getElementById('button-container').style.display = 'none';
                     } else {
                         if (data.especial) {
                             if (confirm("Você deseja desistir e levar o valor acumulado e um carro?")) {
@@ -94,8 +101,10 @@
                         optionsList.innerHTML = '';
                         data.alternativas.forEach((option, index) => {
                             const li = document.createElement('li');
-                            li.textContent = option;
-                            li.onclick = () => sendAnswer(data.numero, option.charAt(0));
+                            const button = document.createElement('button');
+                            button.textContent = option;
+                            button.onclick = () => sendAnswer(data.numero, option.charAt(0));
+                            li.appendChild(button);
                             optionsList.appendChild(li);
                         });
                         optionsList.style.display = 'block';

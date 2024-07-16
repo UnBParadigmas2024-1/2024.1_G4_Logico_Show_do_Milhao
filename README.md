@@ -5,20 +5,25 @@
 **Paradigma**: Paradigma Lógico - PROLOG<br>
 
 ## Alunos
+
 | Matrícula  | Aluno                        |
 | ---------- | ---------------------------- |
+| 20/0057421 | Delziron Braz de Lima        |
 | 20/0030264 | Guilherme Nishimura da Silva |
 | 18/0136925 | Hugo Rocha de Moura          |
 | 19/0142260 | Mateus de Almeida Dias       |
-| 20/0057421 | Delziron Braz de Lima        |
+| 20/0025791 | Pablo Guilherme de Jesus Batista Silva|
 
 ## Sobre 
+
 O jogo "Show do Milhão" criado é uma versão digital inspirada no famoso programa televisivo brasileiro "Show do Milhão" exibido pelo SBT. Ele combina elementos de perguntas e respostas com a dinâmica de acumulação de pontos ao responder corretamente.
 
 ## Screenshots
+
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
+
 **Linguagens**: Prolog e Javascript <br>
 **Tecnologias**: Html e Docker<br>
 
@@ -27,13 +32,19 @@ Docker
 ## Uso 
 
 ### PRIMEIRAMENTE FAÇA O BUILD DO PROJETO:
+
     docker build -t show_do_milhao .
+
 ### APÓS EXECUTADO O BUILD, RODE COM:
+
     docker run -p 8080:8080 show_do_milhao
+
 ### ABRA O NAVEGADOR E NAVEGUE ATÉ:
+
     http://localhost:8080
 
 ## Vídeo
+
 Adicione 1 ou mais vídeos com a execução do projeto.
 Procure: 
 (i) Introduzir o projeto;
@@ -44,13 +55,16 @@ OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
 TEMPO: +/- 15min
 
 ## Participações
+
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Nome do Membro      | Contribuição                                                 | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | Hugo Rocha          | Criação de parte do código prolog e implementação do  docker | Excelente                                                                      |
 | Guilherme Nishimura | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
+| Pablo Guilherme | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
 
-## Outros 
+## Outros
+
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
 (i) Lições Aprendidas;
 (ii) Percepções;
@@ -58,5 +72,6 @@ Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não es
 (iV) Trabalhos Futuros.
 
 ## Fontes
+
 Referencie, adequadamente, as referências utilizadas.
 Indique ainda sobre fontes de leitura complementares.
