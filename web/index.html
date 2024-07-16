@@ -51,7 +51,6 @@
     <button id="help-button" onclick="getHelp()">Ajuda</button>
     <button id="desistir-button" onclick="desistir()" style="display:none;">Desistir</button>
     <div id="valor-acumulado" style="display:none;">Valor Acumulado: R$ 0,00</div>
-
     <script>
         let valorAcumulado = 0;
 
@@ -79,6 +78,12 @@
                         document.getElementById('next-button').style.display = 'none';
                         document.getElementById('desistir-button').style.display = 'none';
                     } else {
+                        if (data.especial) {
+                            if (confirm("Você deseja desistir e levar o valor acumulado e um carro?")) {
+                                desistir();
+                                return;
+                            }
+                        }
                         document.getElementById('question').textContent = data.pergunta;
                         document.getElementById('question').style.display = 'block';
                         const optionsList = document.getElementById('options');
@@ -113,7 +118,7 @@
                         document.getElementById('next-button').style.display = 'block';
                     } else {
                         document.getElementById('status').textContent += ' A resposta correta é ' + data.resposta_correta;
-                        alert("FIM DE JOGO, você vai voltar para casa de bolsos vazios! Resposta errada! A resposta correta é: " + data.resposta_correta);
+                        alert("FIM DE JOGO,você vai voltar para casa de bolsos vazios! Resposta errada! A resposta correta é: " + data.resposta_correta);
                         location.reload();
                     }
                 })
@@ -133,12 +138,14 @@
             fetch('/api/desistir')
                 .then(response => response.json())
                 .then(data => {
-                    alert("Você desistiu do jogo! Valor recebido: R$ " + data.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+                    alert("Você desistiu do jogo! Valor recebido: R$ " + data.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " e um carro!");
                     location.reload();
                 })
                 .catch(error => console.error('Erro:', error));
         }
     </script>
+
+
 </body>
 
 </html>

@@ -53,9 +53,12 @@ enviar_pergunta(_Request) :-
     pontuacao(P),
     ProximaPergunta is P + 1,
     (pergunta(ProximaPergunta, Pergunta, Alternativas, _) ->
-        reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas});
+        (ProximaPergunta mod 5 =:= 0 ->
+            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, especial: true});
+            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas}));
         finalizar_jogo).
 
+% Verificar resposta
 verificar_resposta(Request) :-
     catch(
         (   http_read_json_dict(Request, Dados),
@@ -94,8 +97,7 @@ finalizar_jogo :-
 % Desistir do jogo
 desistir(_Request) :-
     valor_acumulado(V),
-    ValorDesistencia is V * 0.55,
-    reply_json(_{status: 'Desistiu', valor: ValorDesistencia}).
+    reply_json(_{status: 'Desistiu', valor: V}).
 
 % Manter servidor ativo
 server_loop :-
