@@ -7,6 +7,7 @@
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
+| 20/0030264  | Guilherme Nishimura da Silva |
 | 18/0136925  |  Hugo Rocha de Moura |
 | 19/0142260  |  Mateus de Almeida Dias |
 
@@ -46,6 +47,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
 | Hugo Rocha  |  Criação de parte do código prolog e implementação do  docker | Excelente |
+| Guilherme Nishimura |  Contribuição com funcionalidades no prolog e no front | Excelente |
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
