@@ -6,6 +6,7 @@
 
 :- dynamic jogador/1.
 :- dynamic pontuacao/1.
+:- dynamic valor_acumulado/1.
 :- dynamic pergunta/4.
 
 % Carregar perguntas e respostas
@@ -35,13 +36,16 @@ server(Port) :-
 :- http_handler(root(api/pergunta), enviar_pergunta, []).
 :- http_handler(root(api/resposta), verificar_resposta, []).
 :- http_handler(root(api/ajuda), fornecer_ajuda, []).
+:- http_handler(root(api/desistir), desistir, []).
 
 % Iniciar o jogo
 iniciar_jogo(_Request) :-
     carregar_perguntas,
     retractall(jogador(_)),
     retractall(pontuacao(_)),
+    retractall(valor_acumulado(_)),
     assertz(pontuacao(0)),
+    assertz(valor_acumulado(0)),
     reply_json(_{status: 'Jogo iniciado'}).
 
 % Enviar pergunta
@@ -70,17 +74,28 @@ verificar_resposta(Request) :-
         )
     ).
 
-% Incrementar pontuação
+% Incrementar pontuação e valor acumulado
 incrementar_pontuacao :-
     pontuacao(P),
     NovoP is P + 1,
     retract(pontuacao(P)),
-    assertz(pontuacao(NovoP)).
+    assertz(pontuacao(NovoP)),
+    valor_acumulado(V),
+    NovoV is V + 65000,
+    retract(valor_acumulado(V)),
+    assertz(valor_acumulado(NovoV)).
 
 % Finalizar o jogo
 finalizar_jogo :-
     pontuacao(P),
-    reply_json(_{status: 'Fim de jogo', pontuacao: P}).
+    valor_acumulado(V),
+    reply_json(_{status: 'Fim de jogo', pontuacao: P, valor_acumulado: V}).
+
+% Desistir do jogo
+desistir(_Request) :-
+    valor_acumulado(V),
+    ValorDesistencia is V * 0.55,
+    reply_json(_{status: 'Desistiu', valor: ValorDesistencia}).
 
 % Manter servidor ativo
 server_loop :-
@@ -91,7 +106,6 @@ server_loop :-
 % Iniciar servidor na porta 8080
 :- initialization(server(8080)),
    initialization(server_loop).
-
 
 :- http_handler(root(api/ajuda), fornecer_ajuda, []).
 fornecer_ajuda(_Request) :-
