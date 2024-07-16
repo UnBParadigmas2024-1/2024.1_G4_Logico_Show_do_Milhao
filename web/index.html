@@ -27,7 +27,7 @@
     <script>
         let valorAcumulado = 0;
         let currentQuestionNumber = 0;
-
+    
         function startGame() {
             fetch('/api/iniciar')
                 .then(response => response.json())
@@ -41,7 +41,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-
+    
         function getQuestion() {
             fetch('/api/pergunta')
                 .then(response => response.json())
@@ -78,7 +78,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-
+    
         function sendAnswer(numero, resposta) {
             fetch('/api/resposta', {
                 method: 'POST',
@@ -91,7 +91,7 @@
                 .then(data => {
                     document.getElementById('status').textContent = data.status;
                     if (data.status === 'Correto') {
-                        valorAcumulado += 65000;
+                        valorAcumulado = data.valor_acumulado;
                         document.getElementById('valor-acumulado').textContent = 'Valor Acumulado: R$ ' + valorAcumulado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                         document.getElementById('next-button').style.display = 'block';
                         document.getElementById('hint-button').style.display = 'none';
@@ -103,7 +103,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-
+    
         function getHint() {
             fetch('/api/dica', {
                 method: 'POST',
@@ -118,7 +118,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-
+    
         function getHelp() {
             fetch('/api/ajuda')
                 .then(response => response.json())
@@ -127,7 +127,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-
+    
         function desistir() {
             fetch('/api/desistir')
                 .then(response => response.json())
@@ -138,6 +138,8 @@
                 .catch(error => console.error('Erro:', error));
         }
     </script>
+    
 </body>
 
 </html>
+
