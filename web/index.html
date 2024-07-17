@@ -140,7 +140,7 @@
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('status').textContent = 'Questão pulada!';
-                    valorAcumulado += 65000;
+                    valorAcumulado += 62500;
                     document.getElementById('valor-acumulado').textContent = 'Valor Acumulado: R$ ' + valorAcumulado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                     skipUsed = true;
                     document.getElementById('skip-button').style.display = 'none';

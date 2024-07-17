@@ -80,8 +80,8 @@ Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não es
 ## Fontes
 
 Referencie, adequadamente, as referências utilizadas.
-https://www.semprefamilia.com.br/blogs/milnovecentosebolinha/show-do-milhao-sucesso-de-audiencia-no-inicio-dos-anos-2000/
 
-musica do quem quer ser um milionario https://www.youtube.com/watch?v=l6y20VCCal4
+- [Fonte da Logo e inspiração para cores](https://www.semprefamilia.com.br/blogs/milnovecentosebolinha/show-do-milhao-sucesso-de-audiencia-no-inicio-dos-anos-2000/)
+- [Música do quem quer ser um milionario](https://www.youtube.com/watch?v=l6y20VCCal4)
 
 Indique ainda sobre fontes de leitura complementares.
