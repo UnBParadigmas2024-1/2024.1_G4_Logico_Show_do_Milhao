@@ -43,7 +43,10 @@ carregar_perguntas :-
         pergunta(37, 'Em que ano ocorreu a queda do Muro de Berlim?', ['a) 1985', 'b) 1987', 'c) 1989', 'd)1991'], 'c', 'Simbolizando o fim da Guerra Fria'),
         pergunta(38, 'Qual é o livro mais vendido de todos os tempos?', ['a) O Senhor dos Anéis', 'b) O Pequeno Príncipe', 'c) Bíblia', 'd) Harry Potter e a Pedra Filosofal'], 'c', 'Amplamente distribuído e traduzido em várias línguas ao redor do mundo'),
         pergunta(39, 'Qual é o oceano mais profundo do mundo?', ['a)Atlântico', 'b) Índico', 'c) Pacífico', 'd) Ártico'], 'c', 'Com profundidades que atingem o ponto mais baixo da Terra'),
-        pergunta(40, 'Quem inventou a lâmpada elétrica?', ['a) Nikola Tesla', 'b) Thomas Edison', 'c) Alexander Graham Bell', 'd) James Watt'], 'b', 'É conhecido por suas inovações em eletricidade e iluminação')
+        pergunta(40, 'Quem inventou a lâmpada elétrica?', ['a) Nikola Tesla', 'b) Thomas Edison', 'c) Alexander Graham Bell', 'd) James Watt'], 'b', 'É conhecido por suas inovações em eletricidade e iluminação'),
+        pergunta(41, 'Qual atividade esportiva mais famosa no japão?', ['a) Basebol', 'b) Judô', 'c) Karatê', 'd) Sumô '], 'a', 'Apesar do Sumô ser considerado o esporte nacional do japão o basebol é o mais popular, sendo considerado o esporte não-oficial nacional'),
+        pergunta(42, 'Em que ano a independência do Brasil ocorreu?', ['a) 1889', 'b) 1822', 'c) 1823 ', 'd) 1888'], 'b', 'O que será que maria leopodildina penso quando assinou a independência do Brasil e dom pedro disse que ficava'),
+        pergunta(43, 'Qual é o recorde mundial para mais tempo vivendo embaixo de água?', ['a) 60 dias', 'b) 20 minutos', 'c) 87 dias', 'd) 74 dias'], 'd', 'Sim, o tempo de vivendo baixo de água foi feito pelo americano Joseph Dituri')
     ],
     random_permutation(Perguntas, PerguntasEmbaralhadas),
     retractall(perguntas_em_ordem(_)),

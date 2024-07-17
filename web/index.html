@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <button id="play-button">Tocar Música de Fundo</button>
+    <button id="play-button" class="million-button">Tocar Música do Milhão</button>
     <audio id="background-music" loop></audio>
     <h1 class="menu-topo">Grupo 4</h1>
     <h2 class="menu-topo">Apresenta</h2>
@@ -34,6 +34,7 @@
         let valorAcumulado = 0;
         let currentQuestionNumber = 0;
         let skipUsed = false;
+        let audioPlayed = false;
 
         function startGame() {
             fetch('/api/iniciar')
@@ -184,8 +185,17 @@
 
         document.getElementById('play-button').addEventListener('click', function() {
             var audio = document.getElementById('background-music');
-            if (audio) audio.play();
-            document.getElementById('play-button').style.display = 'none';
+            if (audioPlayed == false){
+                audio.play();
+                audioPlayed = true;
+                document.getElementById('play-button').textContent = "Pausar Música do Milhão"
+
+            }else if(audioPlayed == true){
+                audio.pause();
+                audioPlayed = false;
+                document.getElementById('play-button').textContent = "Tocar Música do Milhão"
+            }
+            
         });
 
         document.addEventListener('DOMContentLoaded', musicBackground);
