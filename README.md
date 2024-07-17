@@ -81,6 +81,14 @@ Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não es
 
 Referencie, adequadamente, as referências utilizadas.
 
+- DOCKER. *Documentação DOCKER*. Disponível em: <https://docs.docker.com/reference/dockerfile/>
+- DOCKER. *Imagem SWI prolog*. Disponível em: <https://hub.docker.com/_/swipl/>
+- LAGO, S. *Introdução à linguagem Prolog*. Disponível em: <https://www.ime.usp.br/~slago/slago-prolog.pdf>
+- MEIDANIS, J. *Paradigmas de programação usando Prolog*. Disponível em: <https://www.ic.unicamp.br/~meidanis/courses/mc346/2017s2/prolog/apostila-prolog.pdf>
+- AUGUSTO. *Introdução à programação Prolog*. Disponível em: <https://dcm.ffclrp.usp.br/~augusto/teaching/ia/IA-Prolog-Introducao-Tutorial.pdf>
+- SWI-PROLOG. *Http server Prolog*. Disponível em: <https://www.swi-prolog.org/pldoc/doc_for?object=thread_httpd%3Ahttp_server/2>
+- SWI-PROLOG. *Json com Prolog*. Disponível em: <https://www.swi-prolog.org/pldoc/doc/_SWI_/library/ext/http/http/json.pl>
+
 - [Fonte da Logo e inspiração para cores](https://www.semprefamilia.com.br/blogs/milnovecentosebolinha/show-do-milhao-sucesso-de-audiencia-no-inicio-dos-anos-2000/)
 - [Música do quem quer ser um milionario](https://www.youtube.com/watch?v=l6y20VCCal4)
 
