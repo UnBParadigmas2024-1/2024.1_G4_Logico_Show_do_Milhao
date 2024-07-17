@@ -8,6 +8,7 @@
 
 | Matrícula  | Aluno                                  |
 | ---------- | -------------------------------------- |
+| 20/0060783 | Ana Beatriz Wanderley Massuh           |
 | 20/0057421 | Delziron Braz de Lima                  |
 | 20/0030264 | Guilherme Nishimura da Silva           |
 | 18/0136925 | Hugo Rocha de Moura                    |
@@ -63,6 +64,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Guilherme Nishimura | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
 | Pablo Guilherme     | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
 | Delziron Braz       | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
+| Ana Beatriz Massuh  | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
 
 ## Outros
 
