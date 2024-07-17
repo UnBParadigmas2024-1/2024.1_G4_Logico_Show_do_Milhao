@@ -12,6 +12,7 @@
 | 20/0057421 | Delziron Braz de Lima                  |
 | 20/0018060 | Gabriel Ferreira da Silva              |
 | 20/0030264 | Guilherme Nishimura da Silva           |
+| 18/0121847 | Helder Lourenço de Abreu Marques       |
 | 18/0136925 | Hugo Rocha de Moura                    |
 | 19/0142260 | Mateus de Almeida Dias                 |
 | 20/0025791 | Pablo Guilherme de Jesus Batista Silva |
@@ -67,7 +68,8 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Delziron Braz       | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
 | Ana Beatriz Massuh  | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
 | Mateus de Almeida   | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
-| Gabriel Ferreira    | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
+| Gabriel Ferreira    | Contribuição com funcionalidades no prolog e no front        | Excelente   
+| Helder Lourenço    | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                   |
 
 ## Outros
 
