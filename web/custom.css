@@ -1,11 +1,28 @@
+html{
+    height: 100%;
+  background: linear-gradient(to bottom, #2215F2, #0000AC);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    color: white;
 }
 
 .question {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 15px;
+    background: linear-gradient(to bottom right, #FF0000, #FFA500);
+    border: 0;
+    border-radius: 4px;
+    text-shadow: 2px 2px 4px #000;
+    color: white;
+    width: 800px;
+    height: 45px;
 }
 
 .options {
@@ -26,11 +43,62 @@ button {
     transition: opacity .2s;
 }
 
+button.idle-button {
+    background: linear-gradient(to bottom right, #FF0000, #FFA500);
+    border: 0;
+    border-radius: 4px;
+    text-shadow: 2px 2px 4px #000;
+    color: white;
+    width: 150px;
+    height: 50px;
+}
+
+button.idle-button:hover {
+    background: linear-gradient(to bottom right, #FFA500, #FF0000);
+}
+
+/* Tem que ficar em verde claro e azul piscina */
+button.helpIdle-button {
+    background: linear-gradient(to bottom right, blue, #00CED1);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    text-shadow: 2px 2px 4px #000;
+    color: white;
+    width: 140px;
+    height: 40px;
+}
+
+button.helpIdle-button:hover {
+    background: linear-gradient(to bottom right, #00CED1, blue);
+}
+
+button.option-button {
+    background: linear-gradient(to bottom right, #FF0000, #FFA500);
+    border: 0;
+    border-radius: 4px;
+    text-shadow: 2px 2px 4px #000;
+    color: white;
+    width: 360px;
+    height: 45px;
+}
+
+button.option-button:hover {
+    background: linear-gradient(to bottom right, #FFA500, #FF0000);
+}
+
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+img#logo-milhao{
+    width: 25rem;
+}
+
+.start-container{
+    margin-top: 10px;
 }
 
 #valor-acumulado {

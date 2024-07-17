@@ -9,19 +9,23 @@
 </head>
 
 <body>
-    <h1>Show do Milhão</h1>
-    <div id="status">Clique no botão para iniciar o jogo</div>
-    <button id="start-button" onclick="startGame()">Iniciar Jogo</button>
+    <h1 class="menu-topo">Grupo 4</h1>
+    <h2 class="menu-topo">Apresenta</h2>
+    <img src="show.png" id='logo-milhao' alt="Jogo show do Milhão">
+    <div class="start-container">
+        <div id="status">Clique no botão para iniciar o jogo</div>
+        <button id="start-button" class="idle-button" onclick="startGame()">Iniciar Jogo</button>
+    </div>
     <div class="question" id="question" style="display:none;"></div>
     <ul class="options" id="options" style="display:none;"></ul>
     <div id="valor-acumulado" style="display:none;">Valor Acumulado: R$ 0,00</div>
 
     <div class="button-container" style="display:none;" id="button-container">
-        <button id="hint-button" onclick="getHint()">Dica</button>
-        <button id="next-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
-        <button id="desistir-button" onclick="desistir()">Desistir</button>
-        <button id="skip-button" onclick="skipQuestion()">Pular</button>
-        <button id="help-button" onclick="getHelp()" style="display:none;">Ajuda</button>
+        <button id="hint-button" class="helpIdle-button" onclick="getHint()">Dica</button>
+        <button id="next-button" class="helpIdle-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
+        <button id="desistir-button" class="helpIdle-button" onclick="desistir()">Desistir</button>
+        <button id="skip-button" class="helpIdle-button" onclick="skipQuestion()">Pular</button>
+        <button id="help-button" class="helpIdle-button" onclick="getHelp()" style="display:none;">Ajuda</button>
     </div>
 
     <script>
@@ -33,6 +37,10 @@
             fetch('/api/iniciar')
                 .then(response => response.json())
                 .then(data => {
+                    document.querySelectorAll('.menu-topo').forEach(function(menu) {
+                        menu.style.display = 'none';
+                    });
+                    document.getElementById('logo-milhao').style = 'width:15.625rem;';
                     document.getElementById('status').textContent = data.status;
                     document.getElementById('start-button').style.display = 'none';
                     getQuestion();
@@ -67,6 +75,7 @@
                         data.alternativas.forEach((option, index) => {
                             const li = document.createElement('li');
                             const button = document.createElement('button');
+                            button.classList.add('option-button');
                             button.textContent = option;
                             button.onclick = () => sendAnswer(data.numero, option.charAt(0));
                             li.appendChild(button);
