@@ -39,10 +39,10 @@ carregar_perguntas :-
         pergunta(33, 'Qual é a maior estrela do nosso sistema solar?', ['a) Sirius', 'b) Alpha Centauri', 'c) Betelgeuse', 'd) Sol'], 'd', 'Esta estrela é essencial para a vida na Terra.'),
         pergunta(34, 'Em que continente fica o Egito?', ['a) África', 'b) Ásia', 'c) Europa', 'd) América do Sul'], 'a', 'Este país é famoso por suas pirâmides antigas.'),
         pergunta(35, 'Qual é o animal mais rápido do mundo?', ['a) Guepardo', 'b) Falcão peregrino', 'c) Leopardo', 'd) Cavalo'], 'a', 'Este animal pode atingir velocidades superiores a 100 km/h.'),
-        pergunta(36, 'Segundo o cantor Crazy Frog em sua canção, o que ele quer?',['a) ABLINGLINBLINBLONBLONBLINBLINBLAI', 'b) BRINGLINGLONGLONGLONGLENGANGLENGLEN', 'c) BRANGANGANGENGENGANGLINGLIN', 'd) BINBIN'],'d', 'Talvez ele queira algo simples')
-        pergunta(37, 'Em que ano ocorreu a queda do Muro de Berlim?', ['a) 1985', 'b) 1987', 'c) 1989', 'd)1991'], 'c', 'Simbolizando o fim da Guerra Fria')
-        pergunta(38, 'Qual é o livro mais vendido de todos os tempos?', ['a) O Senhor dos Anéis', 'b) O Pequeno Príncipe', 'c) Bíblia', 'd) Harry Potter e a Pedra Filosofal'], 'c', 'Amplamente distribuído e traduzido em várias línguas ao redor do mundo')
-        pergunta(39, 'Qual é o oceano mais profundo do mundo?', ['a)Atlântico', 'b) Índico', 'c) Pacífico', 'd) Ártico'], 'c', 'Com profundidades que atingem o ponto mais baixo da Terra')
+        pergunta(36, 'Segundo o cantor Crazy Frog em sua canção, o que ele quer?',['a) ABLINGLINBLINBLONBLONBLINBLINBLAI', 'b) BRINGLINGLONGLONGLONGLENGANGLENGLEN', 'c) BRANGANGANGENGENGANGLINGLIN', 'd) BINBIN'],'d', 'Talvez ele queira algo simples'),
+        pergunta(37, 'Em que ano ocorreu a queda do Muro de Berlim?', ['a) 1985', 'b) 1987', 'c) 1989', 'd)1991'], 'c', 'Simbolizando o fim da Guerra Fria'),
+        pergunta(38, 'Qual é o livro mais vendido de todos os tempos?', ['a) O Senhor dos Anéis', 'b) O Pequeno Príncipe', 'c) Bíblia', 'd) Harry Potter e a Pedra Filosofal'], 'c', 'Amplamente distribuído e traduzido em várias línguas ao redor do mundo'),
+        pergunta(39, 'Qual é o oceano mais profundo do mundo?', ['a)Atlântico', 'b) Índico', 'c) Pacífico', 'd) Ártico'], 'c', 'Com profundidades que atingem o ponto mais baixo da Terra'),
         pergunta(40, 'Quem inventou a lâmpada elétrica?', ['a) Nikola Tesla', 'b) Thomas Edison', 'c) Alexander Graham Bell', 'd) James Watt'], 'b', 'É conhecido por suas inovações em eletricidade e iluminação')
     ],
     random_permutation(Perguntas, PerguntasEmbaralhadas),
