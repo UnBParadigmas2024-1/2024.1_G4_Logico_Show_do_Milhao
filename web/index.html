@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <button id="play-button">Tocar Música de Fundo</button>
+    <audio id="background-music" loop></audio>
     <h1 class="menu-topo">Grupo 4</h1>
     <h2 class="menu-topo">Apresenta</h2>
     <img src="show.png" id='logo-milhao' alt="Jogo show do Milhão">
@@ -49,6 +51,19 @@
                     document.getElementById('help-button').style.display = 'block';
                 })
                 .catch(error => console.error('Erro:', error));
+        }
+
+        function musicBackground(){
+            fetch('/api/audio_url')
+                .then(response => response.json())
+                .then(data => {
+                    var audio = document.getElementById('background-music');
+                    if (audio) {
+                        audio.src = data.audio_url;
+                        audio.volume = 0.2;
+                    }
+                })
+                .catch(error => console.error('Erro ao carregar o URL do áudio:', error));
         }
 
         function getQuestion() {
@@ -166,6 +181,14 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
+
+        document.getElementById('play-button').addEventListener('click', function() {
+            var audio = document.getElementById('background-music');
+            if (audio) audio.play();
+            document.getElementById('play-button').style.display = 'none';
+        });
+
+        document.addEventListener('DOMContentLoaded', musicBackground);
     </script>
 </body>
 

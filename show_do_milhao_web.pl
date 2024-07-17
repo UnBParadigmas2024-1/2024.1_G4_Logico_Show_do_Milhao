@@ -24,6 +24,7 @@ server(Port) :-
 :- http_handler(root(api/dica), fornecer_dica, []).
 :- http_handler(root(api/desistir), desistir, []).
 :- http_handler(root(api/pular), pular_pergunta, []).
+:- http_handler(root(api/audio_url), musica_milhao, []).
 
 % Iniciar o jogo
 iniciar_jogo(_Request) :-
@@ -105,6 +106,11 @@ pular_pergunta(_Request) :-
     retract(pulou(false)),
     assertz(pulou(true)),
     enviar_proxima_pergunta.
+
+% Musica Milhao
+musica_milhao(_Request) :-
+    format('Content-type: text/plain~n~n'),
+    format('{"audio_url": "http://localhost:8080/audio/ost.mp3"}').
 
 % Finalizar o jogo
 finalizar_jogo :-
