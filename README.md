@@ -23,7 +23,11 @@ O jogo "Show do Milhão" criado é uma versão digital inspirada no famoso progr
 
 ## Screenshots
 
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
+![Screenshot 1](./img/Titulo.jpeg)
+imagem titulo
+
+![Screenshot 2](./img/game.jpeg)
+Game em funcionamento.
 
 ## Instalação 
 
