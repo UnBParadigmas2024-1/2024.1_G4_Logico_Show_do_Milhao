@@ -65,6 +65,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Pablo Guilherme     | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
 | Delziron Braz       | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
 | Ana Beatriz Massuh  | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
+| Mateus de Almeida   | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
 
 ## Outros
 
