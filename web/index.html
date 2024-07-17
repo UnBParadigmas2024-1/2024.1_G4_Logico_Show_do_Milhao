@@ -5,7 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show do Milhão</title>
-    <link rel="Stylesheet" href="custom.css"/>
+    <link rel="stylesheet" href="custom.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #valor-acumulado {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,19 +52,20 @@
     <div class="question" id="question" style="display:none;"></div>
     <ul class="options" id="options" style="display:none;"></ul>
     <div id="valor-acumulado" style="display:none;">Valor Acumulado: R$ 0,00</div>
-   
 
     <div class="button-container" style="display:none;" id="button-container">
         <button id="hint-button" onclick="getHint()">Dica</button>
-        <button id="next-button" onclick="getQuestion()">Próxima Pergunta</button>
+        <button id="next-button" onclick="getQuestion()" style="display:none;">Próxima Pergunta</button>
         <button id="desistir-button" onclick="desistir()">Desistir</button>
+        <button id="skip-button" onclick="skipQuestion()">Pular</button>
         <button id="help-button" onclick="getHelp()" style="display:none;">Ajuda</button>
     </div>
 
     <script>
         let valorAcumulado = 0;
         let currentQuestionNumber = 0;
-    
+        let skipUsed = false;
+
         function startGame() {
             fetch('/api/iniciar')
                 .then(response => response.json())
@@ -41,7 +79,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-    
+
         function getQuestion() {
             fetch('/api/pergunta')
                 .then(response => response.json())
@@ -74,12 +112,16 @@
                         optionsList.style.display = 'block';
                         document.getElementById('next-button').style.display = 'none';
                         document.getElementById('hint-button').style.display = 'block';
+                        if (!skipUsed) {
+                            document.getElementById('skip-button').style.display = 'block';
+                        }
                     }
                 })
                 .catch(error => console.error('Erro:', error));
         }
-    
+
         function sendAnswer(numero, resposta) {
+            console.log("Enviando resposta:", { numero: numero, resposta: resposta });
             fetch('/api/resposta', {
                 method: 'POST',
                 headers: {
@@ -89,12 +131,12 @@
             })
                 .then(response => response.json())
                 .then(data => {
+                    console.log("Resposta do servidor:", data);
                     document.getElementById('status').textContent = data.status;
                     if (data.status === 'Correto') {
                         valorAcumulado = data.valor_acumulado;
                         document.getElementById('valor-acumulado').textContent = 'Valor Acumulado: R$ ' + valorAcumulado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                        document.getElementById('next-button').style.display = 'block';
-                        document.getElementById('hint-button').style.display = 'none';
+                        getQuestion();
                     } else {
                         document.getElementById('status').textContent += ' A resposta correta é ' + data.resposta_correta;
                         alert("FIM DE JOGO,você vai voltar para casa de bolsos vazios! Resposta errada! A resposta correta é: " + data.resposta_correta);
@@ -103,7 +145,22 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-    
+
+
+        function skipQuestion() {
+            fetch('/api/pular')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').textContent = 'Questão pulada!';
+                    valorAcumulado += 65000;
+                    document.getElementById('valor-acumulado').textContent = 'Valor Acumulado: R$ ' + valorAcumulado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    skipUsed = true;
+                    document.getElementById('skip-button').style.display = 'none';
+                    getQuestion();
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+
         function getHint() {
             fetch('/api/dica', {
                 method: 'POST',
@@ -118,7 +175,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-    
+
         function getHelp() {
             fetch('/api/ajuda')
                 .then(response => response.json())
@@ -127,7 +184,7 @@
                 })
                 .catch(error => console.error('Erro:', error));
         }
-    
+
         function desistir() {
             fetch('/api/desistir')
                 .then(response => response.json())
@@ -138,7 +195,6 @@
                 .catch(error => console.error('Erro:', error));
         }
     </script>
-    
 </body>
 
 </html>
