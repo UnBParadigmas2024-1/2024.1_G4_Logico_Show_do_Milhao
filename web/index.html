@@ -71,8 +71,8 @@
             fetch('/api/pergunta')
                 .then(response => response.json())
                 .then(data => {
-                    if (data.status === 'Fim de jogo') {
-                        document.getElementById('status').textContent = 'Fim de jogo! Pontuação: ' + data.pontuacao + ' | Valor Acumulado: R$ ' + data.valor_acumulado;
+                    if (data.valor_acumulado === 1000000) {
+                        document.getElementById('status').textContent = 'Fim de jogo! Você venceu! Pontuação: ' + data.pontuacao + ' | Valor Acumulado: R$ ' + data.valor_acumulado;
                         document.getElementById('question').style.display = 'none';
                         document.getElementById('options').style.display = 'none';
                         document.getElementById('button-container').style.display = 'none';

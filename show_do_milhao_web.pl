@@ -43,13 +43,19 @@ enviar_pergunta(_Request) :-
     pontuacao(P),
     perguntas_em_ordem(PerguntasEmbaralhadas),
     length(PerguntasEmbaralhadas, NumPerguntas),
-    (P < NumPerguntas ->
-        nth0(P, PerguntasEmbaralhadas, pergunta(_, Pergunta, Alternativas, _, Dica)),
-        ProximaPergunta is P + 1,
-        (ProximaPergunta mod 5 =:= 0 ->
-            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, dica: Dica, especial: true});
-            reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, dica: Dica}));
-        finalizar_jogo).
+    valor_acumulado(ValorAcumulado),
+    (ValorAcumulado >= 1000000 ->
+        finalizar_jogo;
+        (P < NumPerguntas ->
+            nth0(P, PerguntasEmbaralhadas, pergunta(_, Pergunta, Alternativas, _, Dica)),
+            ProximaPergunta is P + 1,
+            (ProximaPergunta mod 5 =:= 0 ->
+                reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, dica: Dica, especial: true});
+                reply_json(_{numero: ProximaPergunta, pergunta: Pergunta, alternativas: Alternativas, dica: Dica}));
+            true;
+            finalizar_jogo)
+    ).
+
 
 % Verificar resposta
 verificar_resposta(Request) :-
@@ -82,7 +88,7 @@ incrementar_pontuacao :-
     retract(pontuacao(P)),
     assertz(pontuacao(NovoP)),
     valor_acumulado(V),
-    NovoV is V + 65000,
+    NovoV is V + 62500,
     retract(valor_acumulado(V)),
     assertz(valor_acumulado(NovoV)).
 
