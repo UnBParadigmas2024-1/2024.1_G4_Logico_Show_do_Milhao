@@ -24,17 +24,22 @@ O jogo "Show do Milhão" criado é uma versão digital inspirada no famoso progr
 ## Screenshots
 
 ![Screenshot 1](./img/Titulo.jpeg)
-imagem titulo
+Página Inicial do Projeto
 
 ![Screenshot 2](./img/game.jpeg)
 Game em funcionamento.
+
+![GIF de Uso](./img/uso.gif)
+GIF do Jogo em Uso
 
 ## Instalação 
 
 **Linguagens**: Prolog e Javascript <br>
 **Tecnologias**: Html e Docker<br>
 
-Docker
+## Instalação do Docker
+
+Para executar o projeto é necessário possui o docker em sua máquina, tal pode ser encontrado a seguir: [Link de Instalação](https://docs.docker.com/engine/install/). Após entrar no link, procurar a sua perspectiva instalação de acordo com o seu sistema operacional, após essa instalação basta seguir as instruções de uso.
 
 ## Uso 
 
@@ -52,14 +57,10 @@ Docker
 
 ## Vídeo
 
-Adicione 1 ou mais vídeos com a execução do projeto.
-Procure: 
-(i) Introduzir o projeto;
-(ii) Mostrar passo a passo o código, explicando-o, e deixando claro o que é de terceiros, e o que é contribuição real da equipe;
-(iii) Apresentar particularidades do Paradigma, da Linguagem, e das Tecnologias, e
-(iV) Apresentar lições aprendidas, contribuições, pendências, e ideias para trabalhos futuros.
-OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
-TEMPO: +/- 15min
+Os vídeos de apresentação do trabalho podem ser encontrados em:
+
+- [Video de Apresnetação Parte 1](./videos/video_1.mkv)
+- [Video de Apresnetação Parte 2](./videos/video_2.mkv)
 
 ## Participações
 
@@ -77,18 +78,23 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 
 ## Outros
 
-### Lições aprendidas
-
-As lições aprendidas incluíram a modularização do código em Prolog, compreendendo suas peculiaridades, 
+#### Lições Aprendidas e Percepções
+- As lições aprendidas incluíram a modularização do código em Prolog, compreendendo suas peculiaridades, 
 como as regras e o uso de cláusulas dinâmicas. O mais interessante foi utilizar Prolog como uma API e 
 consumi-la usando HTML, CSS e JavaScript.
 
+#### Contribuições e Fragilidades
 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+#### Trabalhos Futuros
+
+Para trabalhos futuros o que pode ser incrementado e/ou corrigido são:
+
+- A adição de previsão de quanto vale a pergunta.
+- A adição de efeitos sonoros como o Errou e Acertou do Silvio Santos.
+- Adição de contador de números de dicas.
+- Aletorizar valores de premios, como por exemplo, modos de jogo especiais valendo 2 milhoẽs ou 500 mil reais.
+- Adicionar um temporizador para cada pergunta.
+- Refatorar dicas para possuir um limitador.
 
 ## Fontes
 
@@ -101,8 +107,5 @@ Referencie, adequadamente, as referências utilizadas.
 - AUGUSTO. *Introdução à programação Prolog*. Disponível em: <https://dcm.ffclrp.usp.br/~augusto/teaching/ia/IA-Prolog-Introducao-Tutorial.pdf>
 - SWI-PROLOG. *Http server Prolog*. Disponível em: <https://www.swi-prolog.org/pldoc/doc_for?object=thread_httpd%3Ahttp_server/2>
 - SWI-PROLOG. *Json com Prolog*. Disponível em: <https://www.swi-prolog.org/pldoc/doc/_SWI_/library/ext/http/http/json.pl>
-
-- [Fonte da Logo e inspiração para cores](https://www.semprefamilia.com.br/blogs/milnovecentosebolinha/show-do-milhao-sucesso-de-audiencia-no-inicio-dos-anos-2000/)
-- [Música do quem quer ser um milionario](https://www.youtube.com/watch?v=l6y20VCCal4)
-
-Indique ainda sobre fontes de leitura complementares.
+- Gazeta do Povo. *Show do milhão: sucesso de audiência no início do anos 2000*. Disponível em: https://www.semprefamilia.com.br/blogs/milnovecentosebolinha/show-do-milhao-sucesso-de-audiencia-no-inicio-dos-anos-2000/
+- Strachan, Matthew. *Música:Who Wants To Be A Millionaire Full Theme*. Disponível em:https://www.youtube.com/watch?v=l6y20VCCal4.
