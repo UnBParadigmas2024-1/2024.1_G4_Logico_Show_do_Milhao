@@ -85,6 +85,9 @@ consumi-la usando HTML, CSS e JavaScript.
 
 #### Contribuições e Fragilidades
 
+Com o uso do Docker, todo o grupo pode se manter com o mesmo pensamento, sem problemas de instalação do prolog. Facilitando assim o andamento do projeto, demonstrando um pouco do poderio do Prolog e como o mesmo pode ser integrado a outras linguagens. Apesar de sofrer com algumas dificuldades como por exemplo a falta de um frontend melhor para às notificações quando se usa as ajudas e responde às questões, informações relacionadas a quantidade de uso restantes de ajudas e dicas e a falta de um Docker composer ou funcionalidade do Docker para dar o reinício da aplicação automaticamente, sem a necessidade de ter que parar o contêiner, o projeto pode ser concluído e todos os membros puderam contribuir com o que conheciam. 
+
+
 #### Trabalhos Futuros
 
 Para trabalhos futuros o que pode ser incrementado e/ou corrigido são:
@@ -95,6 +98,7 @@ Para trabalhos futuros o que pode ser incrementado e/ou corrigido são:
 - Aletorizar valores de premios, como por exemplo, modos de jogo especiais valendo 2 milhoẽs ou 500 mil reais.
 - Adicionar um temporizador para cada pergunta.
 - Refatorar dicas para possuir um limitador.
+- Modularizar/Separar em diferentes arquivos prolog as funcionalidades para melhor manuntenção e escalonamento do projeto
 
 ## Fontes
 
