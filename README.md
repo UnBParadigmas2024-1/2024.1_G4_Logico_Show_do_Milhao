@@ -1,7 +1,7 @@
 # G4 - Show do milhão PROLOG
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
-**Nro do Grupo (de acordo com a Planilha de Divisão dos Grupos)**: 08<br>
+**Nro do Grupo (de acordo com a Planilha de Divisão dos Grupos)**: 04<br>
 **Paradigma**: Paradigma Lógico - PROLOG<br>
 
 ## Alunos
