@@ -72,10 +72,17 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Delziron Braz       | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
 | Ana Beatriz Massuh  | Contribuição com funcionalidades no prolog, front e docker   | Excelente                                                                      |
 | Mateus de Almeida   | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
-| Gabriel Ferreira    | Contribuição com funcionalidades no prolog e no front        | Excelente   
-| Helder Lourenço    | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                   |
+| Gabriel Ferreira    | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
+| Helder Lourenço     | Contribuição com funcionalidades no prolog e no front        | Excelente                                                                      |
 
 ## Outros
+
+### Lições aprendidas
+
+As lições aprendidas incluíram a modularização do código em Prolog, compreendendo suas peculiaridades, 
+como as regras e o uso de cláusulas dinâmicas. O mais interessante foi utilizar Prolog como uma API e 
+consumi-la usando HTML, CSS e JavaScript.
+
 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
 (i) Lições Aprendidas;
