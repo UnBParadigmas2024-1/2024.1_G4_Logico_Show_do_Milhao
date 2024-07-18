@@ -59,8 +59,8 @@ Para executar o projeto é necessário possui o docker em sua máquina, tal pode
 
 Os vídeos de apresentação do trabalho podem ser encontrados em:
 
-- [Video de Apresnetação Parte 1](./videos/video_1.mkv)
-- [Video de Apresnetação Parte 2](./videos/video_2.mkv)
+- [Video de Apresentação Parte 1](./videos/video_1.mkv)
+- [Video de Apresentação Parte 2](./videos/video_2.mkv)
 
 ## Participações
 
